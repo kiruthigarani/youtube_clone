@@ -1,14 +1,21 @@
 import React from "react";
+import  {useDispatch} from "react-redux";
 import Hambugericon from "../img/hamburger-menu-web-icon-on-600w-1180081597.webp";
 import Youtubelogo from "../img/youtube-logo-png.png";
 import usericon from "../img/user-icon.png";
 // import searchicon from "../img/search-icon-png.png";
+import { toggle } from "../utils/toggleSlice";
 
 const HeadComponent = () => {
+   const dispatchTogggle = useDispatch();
+   const toggleMenu = () =>{
+    dispatchTogggle(toggle());
+   }
+
   return (
     <div className="grid grid-flow-col p-4 shadow-lg">
       <div className="flex col-span-1">
-        <button className="h-10 ">
+        <button className="h-10" onClick={toggleMenu}>
          
           <img alt="hamburger-icon" src={Hambugericon} className="h-10 " />
         </button>
