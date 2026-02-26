@@ -4,7 +4,7 @@ import MainComponent from './MainComponent';
 
 const BodyComponent = () =>{
     return(
-        <div className='flex'>
+        <div className='flex '>
             <SideMenuComponent />
             <MainComponent />
         </div>

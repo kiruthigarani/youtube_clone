@@ -5,7 +5,7 @@ const SideMenuComponent = () => {
   const isMenuOpen = useSelector((store) => store.toggle.isOpen);
   return (
    
-    <div className={`p-4 shadow-lg w-48 ${isMenuOpen ? "block" : "hidden"}`}>
+    <div className={`p-4 shadow-lg w-48 h-screen  ${isMenuOpen ? "block" : "hidden"}`}>
       <ul>
         <li>Home</li>
         <li>Shorts</li>

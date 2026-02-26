@@ -1,9 +1,16 @@
 import React from 'react'
+import Button from './Button';
 
 const ButtonListComponent = () => {
+  const list = ["All", "Music", "Gaming", "Live", "News", "Sports", "Comedy", "Cooking", "Education", "Technology", "Travel", "Fashion", "Health", "Fitness", "Animals", "Science", "Art", "History", "Business", "Finance"];
   return (
-    <div>
-      <h1 className="text-3xl font-bold">Button List Component</h1>
+    <div className="flex p-4">
+      {
+        list.map((name) => {
+          return <Button name={name} key={name}/>
+        })
+      }
+    
     </div>
   )
 }
