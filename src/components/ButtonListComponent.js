@@ -16,4 +16,4 @@ const ButtonListComponent = () => {
   )
 }
 
-export default ButtonListComponent
+export default ButtonListComponent;

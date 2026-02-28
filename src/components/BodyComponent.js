@@ -1,12 +1,13 @@
 import React from 'react';
 import SideMenuComponent from './SideMenuComponent';
-import MainComponent from './MainComponent';
+import { Outlet } from 'react-router-dom';
+// import MainComponent from "./MainComponent";
 
 const BodyComponent = () =>{
     return(
         <div className='flex '>
             <SideMenuComponent />
-            <MainComponent />
+            <Outlet />
         </div>
     )
 }
