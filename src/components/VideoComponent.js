@@ -26,7 +26,7 @@ const VideoComponent =  () => {
     <div className='flex flex-wrap'>
       {
         json && json.map((video)=>{
-          return <Link to={"/watch?v="+video.id}><VideoCard video={video} key={video.id}/></Link>
+          return <Link  key={video.id} to={"/watch?v="+video.id}><VideoCard video={video}/></Link>
         })
       }
      

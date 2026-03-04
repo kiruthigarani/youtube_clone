@@ -1,8 +1,7 @@
 import {contentViews,convertDate} from "../utils/calculateViewsandDate";
 
 const VideoCard = ({ video }) => {
-    console.log("Videocard:",video);
-
+   
     const { title, channelTitle,publishedAt,thumbnails } = video.snippet;
     const { viewCount } = video.statistics;
 
