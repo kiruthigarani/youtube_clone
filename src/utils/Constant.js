@@ -5,3 +5,4 @@ export const apiURL = `https://youtube.googleapis.com/youtube/v3/videos?part=sni
 export const videoURL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${API_KEY}`;
 
 export const playListURL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGg&key=${API_KEY}`;
+export const searchAPI = `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=`;

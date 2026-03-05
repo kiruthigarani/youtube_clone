@@ -5,7 +5,7 @@ const ButtonListComponent = () => {
   // const list = ["All", "Music", "Gaming", "Live", "News", "Sports", "Comedy", "Cooking", "Education", "Technology", "Travel", "Fashion", "Health", "Fitness", "Animals", "Science", "Art", "History", "Business", "Finance"];
     const list = ["All", "Music", "Gaming", "Live", "News", "Sports", "Comedy", "Cooking", "Education", "Technology",  "Science", "Art", "History", "Business", "Finance"];
   return (
-    <div className="flex p-4">
+    <div className="flex p-4 flex-wrap ">
       {
         list.map((name) => {
           return <Button name={name} key={name}/>
