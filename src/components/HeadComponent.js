@@ -34,7 +34,7 @@ const HeadComponent = () => {
     return ()=>{
     clearTimeout(timer);
   }
-  }, [searchQuery]);
+  }, [searchQuery, cacheResult]);
 
   
   const toggleMenu = () => {

@@ -78,3 +78,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Cache the results in cache using redux
 ## Store the result in redux store
 ## if the same word is searched again, it wont make api call, it will fetch the result from stored cache
+## LRU cache - Least Recently Used 
+  ## We can restrict to store only 100 keys, once it reaches 100, start removing from the top
