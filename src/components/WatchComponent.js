@@ -4,6 +4,8 @@ import { closeMenu } from "../utils/toggleSlice";
 import { useSearchParams } from "react-router";
 import { videoURL } from "../utils/Constant";
 import { contentViews, convertDate } from "../utils/calculateViewsandDate";
+import CommentContainer from "./CommentContainer";
+import commentsStructure from "../utils/comments";
 
 const WatchComponent = () => {
   const dispatchCloseMenu = useDispatch();
@@ -11,6 +13,7 @@ const WatchComponent = () => {
   const [videoDetails, setVideoDetails] = useState(null);
   console.log(getParam.get("v"));
 
+  console.log("Comments Structure in WatchComponent:", commentsStructure);
   useEffect(() => {
     dispatchCloseMenu(closeMenu());
     const getVideoDetails = async () => {
@@ -23,6 +26,7 @@ const WatchComponent = () => {
   }, []);
 
   return (
+    <div className="">
     <div className="p-4 ">
        <iframe
         width="1400"
@@ -30,10 +34,10 @@ const WatchComponent = () => {
         className="rounded-lg"
         src={`https://www.youtube.com/embed/${getParam.get("v")}`}
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       ></iframe>
       <div>
         <h1 className="text-2xl m-2 font-bold">{videoDetails?.items[0].snippet.title}</h1>
@@ -60,6 +64,8 @@ const WatchComponent = () => {
          <h3 className="text-sm">{videoDetails?.items[0].snippet.description.split('\n')[0]}</h3>
         </div>
        
+    </div>
+     <CommentContainer comments={commentsStructure} />
     </div>
   );
 };

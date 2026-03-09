@@ -2,14 +2,15 @@ import {contentViews,convertDate} from "../utils/calculateViewsandDate";
 
 const VideoCard = ({ video }) => {
    
-    const { title, channelTitle,publishedAt,thumbnails } = video.snippet;
+    const { title, channelTitle,publishedAt,thumbnails, } = video.snippet;
     const { viewCount } = video.statistics;
 
    
     return (
+       
         <div className="m-2 p-2 shadow-lg w-72 rounded-lg border-2 border-gray-300">
           
-                <img className="shadow-lg rounded-lg" src={thumbnails.high.url} alt={title} />
+         <img className="shadow-lg rounded-lg" src={thumbnails.high.url} alt={title} />
        
            <ul className="py-2">
             <li>

@@ -5,7 +5,7 @@ import Youtubelogo from "../img/youtube-logo-png.png";
 import usericon from "../img/user-icon.png";
 // import searchicon from "../img/search-icon-png.png";
 import { toggle } from "../utils/toggleSlice";
-import { addCache } from "../utils/searchSlice";
+import { addCache,searchQueryParam } from "../utils/searchSlice";
 import { searchAPI } from "../utils/Constant";
 
 
@@ -46,11 +46,14 @@ const HeadComponent = () => {
      console.log("API Call:", searchQuery);
     const data = await fetch(suggestionAPI);
     const json = await data.json();
-    console.log("API Response:", json);
+    console.log("API Response:", json[1]);
     setSuggestion(json[1]);
     dispatchSearchCache(addCache(
       { [searchQuery]: json[1] }
     ));
+
+   dispatchSearchCache(searchQueryParam(searchQuery));
+    
   };
 
   return (
