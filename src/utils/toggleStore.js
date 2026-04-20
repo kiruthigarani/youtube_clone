@@ -8,7 +8,7 @@ const toggleStore = configureStore({
         toggle: toggleReducer,
         cacheStore: searchReducer,
         btnStore: btnReducer,
-        chat: chatSlice
+        chatStore: chatSlice
 
     }
 });
