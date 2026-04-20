@@ -6,6 +6,7 @@ import { videoURL } from "../utils/Constant";
 import { contentViews, convertDate } from "../utils/calculateViewsandDate";
 import CommentContainer from "./CommentContainer";
 import commentsStructure from "../utils/comments";
+import LiveComponent from "./LiveComponent";
 
 const WatchComponent = () => {
   const dispatchCloseMenu = useDispatch();
@@ -26,10 +27,11 @@ const WatchComponent = () => {
   }, []);
 
   return (
-    <div className="">
-    <div className="p-4 ">
+    <div className="watch-container w-full">
+    <div className="video-live-container flex gap-4">
+    <div className="px-2 py-4 video-container">
        <iframe
-        width="1400"
+        width="950"
         height="700"
         className="rounded-lg"
         src={`https://www.youtube.com/embed/${getParam.get("v")}`}
@@ -55,7 +57,7 @@ const WatchComponent = () => {
             </ul>
         </div>
        
-        <div className=" gap-4 w-2/4 bg-gray-100 p-4 mt-2">
+        <div className=" gap-4 w-2/4 bg-gray-100 p-2 mt-2">
          <ul className="flex gap-4 font-semibold">
             <li>{contentViews(videoDetails?.items[0].statistics.viewCount)} views</li>
             <li>{convertDate(videoDetails?.items[0].snippet.publishedAt)}</li>
@@ -65,7 +67,15 @@ const WatchComponent = () => {
         </div>
        
     </div>
+    <div className="live-container w-full ">
+     <LiveComponent />
+    </div>
+    </div>
+
+    <div className="comment-container">
      <CommentContainer comments={commentsStructure} />
+    </div>
+   
     </div>
   );
 };
