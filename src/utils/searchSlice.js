@@ -2,7 +2,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const searchSlice = createSlice({
-
     name : 'searchcache',
     initialState :{
        // searchQuery: '',

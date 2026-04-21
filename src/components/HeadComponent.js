@@ -21,29 +21,23 @@ const HeadComponent = () => {
   
   useEffect(() => {
     const timer = setTimeout(() => {
-
       if(cacheResult[searchQuery]){
         setSuggestion(cacheResult[searchQuery]);
         console.log("Cache Result from Redux Store:", cacheResult);
       }else{
         searchResult();
       }
-    
     }, 200);
-
-    return ()=>{
-    clearTimeout(timer);
-  }
+    return () => clearTimeout(timer);
   }, [searchQuery, cacheResult]);
 
-  
   const toggleMenu = () => {
     dispatchTogggle(toggle());
   };
 
   const searchResult = async () => {
     const suggestionAPI = `${searchAPI}${searchQuery}`;
-     console.log("API Call:", searchQuery);
+    console.log("API Call:", searchQuery);
     const data = await fetch(suggestionAPI);
     const json = await data.json();
     console.log("API Response:", json[1]);
@@ -51,9 +45,7 @@ const HeadComponent = () => {
     dispatchSearchCache(addCache(
       { [searchQuery]: json[1] }
     ));
-
    dispatchSearchCache(searchQueryParam(searchQuery));
-    
   };
 
   return (
